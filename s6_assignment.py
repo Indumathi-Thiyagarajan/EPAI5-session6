@@ -1,7 +1,7 @@
 import inspect
 from functools import wraps
 
-def docstring_calculation(fn: 'function', / , number_of_char: 'int' = 50) -> 'function':
+def docstring_calculation(fn: 'function', /, number_of_char: 'int' = 50) -> 'function':
     """_summary_
 
     Args:
