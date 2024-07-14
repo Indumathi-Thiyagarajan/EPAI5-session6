@@ -35,7 +35,7 @@ def docstring_calculation(fn: 'function', / , number_of_char: 'int' = 50) -> 'fu
                 return f"This function has a greater than {number_of_char} docstring"
             else:
                 return f"This function has a less than {number_of_char} docstring"
-            
+    
     return checking_docstring
 
 
