@@ -130,8 +130,9 @@ def default_counter(fn, /, counter_dict: dict) -> 'function':
     @wraps(fn)
     def inner(*args, **kwargs):
         nonlocal cnt
+        nonlocal fn, fn_name
         cnt += 1  # increment the counter
         counter_dict[fn_name] = cnt  # update the count in the dictionary
-        return counter_dict
+        return fn(*args, **kwargs)
     
     return inner
