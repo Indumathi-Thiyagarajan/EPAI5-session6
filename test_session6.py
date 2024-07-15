@@ -43,18 +43,18 @@ def test_session6_default_counter_functionality():
     
     dicts = {'add': 0, 'mul': 0, 'div': 0}
 
-    @default_counter(add,counter_dict=dicts)
+    @default_counter(dicts)
     def add(a, b):
         return a + b
     assert x(1,2) == {'add': 1, 'mul': 0, 'div': 0}, "Default Counter function not working as expected"
     
-    @default_counter(counter_dict=dicts)
+    @default_counter(dicts)
     def mul(a, b):
         return a * b
     assert mul(3, 4) == {'add': 1, 'mul': 1, 'div': 0}, "Default Counter function not working as expected"
     assert mul(5, 6) == {'add': 1, 'mul': 2, 'div': 0}, "Default Counter function not working as expected"
     
-    @default_counter(counter_dict=dicts)
+    @default_counter(dicts)
     def div(a, b):
         return a / b
     assert div(10, 2) == {'add': 1, 'mul': 2, 'div': 1}, "Default Counter function not working as expected"
