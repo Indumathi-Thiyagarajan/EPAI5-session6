@@ -131,6 +131,6 @@ def default_counter(fn, /, counter_dict: dict) -> 'function':
         nonlocal fn, fn_name
         cnt += 1
         counter_dict[fn_name] = cnt
-        return fn(*args, **kwargs)
+        return counter_dict
     
     return inner
